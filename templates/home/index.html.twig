@@ -1,0 +1,1206 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+
+
+<style>
+.content__to-left, .content__to-right, .content__to-up, .content__to-scale {
+  opacity: 0;
+}
+
+ 
+
+.is-inviewport .content__to-left {
+    animation: toLeft 0.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+    
+  }
+  .is-inviewport .content__to-opacity {
+    animation: opacity 0.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+    
+  }
+
+
+  .is-inviewport   .content__to-right {
+    animation: toRight 0.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+  
+  }
+
+  .is-inviewport  .content__to-up {
+    animation: toUp 0.5s ease-in-out forwards;
+    
+  }
+
+  .is-inviewport  .content__to-scale {
+    animation: toScale 0.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+   
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    
+    }
+    100% {
+      opacity: 1;
+      
+    }
+  }
+
+
+  @keyframes toRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-40%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes toLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(40%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes toUp {
+    0% {
+      opacity: 0.4;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes toScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.container{
+  width: 80%;
+  margin: auto;
+ 
+}
+.background-transparent{
+  background-color: rgba(255, 255, 255, 0.6);
+ position: relative;
+ z-index: 50;
+ 
+}
+a{
+  text-decoration: none;
+  color: #46c26f;
+}
+.section__carres{
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    justify-content: space-around;
+    width: 100%;
+    overflow-y: hidden;
+}
+.carre1{
+    width: 100px;
+    height: 100px;
+    background-color: #5db803;
+    position: relative;
+    
+    
+    animation: carre__style1 20s linear infinite;
+    
+}
+
+
+@keyframes carre__style1 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+
+.carre2{
+    animation: carre__style2 20s linear infinite;
+    width: 20px;
+    height: 20px;
+    background-color: #46c26f;
+    position: relative;
+}
+@keyframes carre__style2 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+.carre3{
+    position: relative;
+    animation: carre__style3 30s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-color: #46c26f;
+    top: 50px;
+  animation-delay: 5s;
+}
+
+@keyframes carre__style3 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 50px;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+
+
+.carre4{
+    position: relative;
+    animation: carre__style4 25s linear infinite;
+    width: 120px;
+    height: 120px;
+    background-color: #46c26f;
+}
+
+  
+@keyframes carre__style4 {
+    0% {
+     opacity: 0.5;
+     transform: rotate(0deg);
+    bottom: 400px;
+    
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+
+.carre5{
+    position: relative;
+    animation: carre__style5 20s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-color: #5db803;
+    animation-delay: 8s;
+    top: 50px;
+    
+}
+
+@keyframes carre__style5 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 50px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -500px;
+    }
+  }
+ 
+
+.carre6{
+    position: relative;
+    animation: carre__style6 20s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-color: #46c26f;
+    
+    
+}
+@keyframes carre__style6 {
+    0% {
+     opacity: 0.75;
+     transform: rotate(0deg);
+    bottom: 300px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+.carre7{
+    position: relative;
+    animation: carre__style7 20s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-color: #46c26f;
+}
+@keyframes carre__style7 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+.carre8{
+    position: relative;
+    animation: carre__style8 20s linear infinite;
+    width: 60px;
+    height: 60px;
+    background-color: #46c26f;
+    animation-delay: 10s;
+    top: 60px;
+}
+
+@keyframes carre__style8 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 60px;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+.carre9{
+    position: relative;
+    animation: carre__style9 12s linear infinite;
+    width: 38px;
+    height: 38px;
+    background-color: #46c26f;
+}
+@keyframes carre__style9 {
+    0% {
+     opacity: 0.3;
+     transform: rotate(0deg);
+    bottom: 600px;
+    
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+.carre10{
+    width: 100px;
+    height: 100px;
+    background-color: #46c26f;
+    position: relative;
+    
+    
+    animation: carre__style10 20s linear infinite;
+    
+}
+@keyframes carre__style10 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 500px;
+    }
+  }
+ 
+
+.carre11{
+    animation: carre__style11 20s linear infinite;
+    width: 20px;
+    height: 20px;
+    background-color: #46c26f;
+    position: relative;
+}
+@keyframes carre__style11 {
+    0% {
+     opacity: 0.7;
+     transform: rotate(0deg);
+    bottom: 300px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+.carre12{
+    position: relative;
+    animation: carre__style12 30s linear infinite;
+    width: 35px;
+    height: 35px;
+    background-color: #5db803;
+   top:35px;
+    animation-delay: 5s;
+}
+@keyframes carre__style12 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 35px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: 600px;
+    }
+  }
+.carre13{
+    position: relative;
+    animation: carre__style13 20s linear infinite;
+    width: 70px;
+    height: 70px;
+    background-color: #46c26f;
+}
+
+@keyframes carre__style13 {
+    0% {
+     opacity: 0.4;
+     transform: rotate(0deg);
+    top: -500px;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+.carre14{
+    position: relative;
+    animation: carre__style14 20s linear infinite;
+    width: 45px;
+    height: 45px;
+    background-color: #46c26f;
+    animation-delay: 8s;
+    top: 45px;
+}
+
+@keyframes carre__style14 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 45px;
+    
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+.carre15{
+    position: relative;
+    animation: carre__style15 30s linear infinite;
+    width: 25px;
+    height: 25px;
+    background-color: #5db803;
+    animation-delay: 8s;
+    top: 25px ;
+    
+}
+
+@keyframes carre__style15 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 25px;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -700px;
+    }
+  }
+  .carre16{
+    width: 100px;
+    height: 100px;
+    background-color: #5db803;
+    position: relative;
+    
+    
+    animation: carre__style16 20s linear infinite;
+    
+}
+@keyframes carre__style16 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 500px;
+    }
+  }
+ 
+
+.carre17{
+    animation: carre__style17 20s linear infinite;
+    width: 20px;
+    height: 20px;
+    background-color: #46c26f;
+    position: relative;
+}
+@keyframes carre__style17 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    bottom: 0px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      bottom: 900px;
+    }
+  }
+
+.carre18{
+    position: relative;
+    animation: carre__style18 30s linear infinite;
+    width: 35px;
+    height: 35px;
+    background-color: #46c26f;
+   top:35px;
+    animation-delay: 5s;
+}
+@keyframes carre__style18 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 35px
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: 600px;
+    }
+  }
+.carre19{
+    position: relative;
+    animation: carre__style19 20s linear infinite;
+    width: 70px;
+    height: 70px;
+    background-color: #5db803;
+}
+
+@keyframes carre__style19 {
+    0% {
+     opacity: 0.7;
+     transform: rotate(0deg);
+    top: -300px;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+.carre20{
+    position: relative;
+    animation: carre__style20 20s linear infinite;
+    width: 45px;
+    height: 45px;
+    background-color: #46c26f;
+    animation-delay: 8s;
+    top: 45px;
+}
+
+@keyframes carre__style20 {
+    0% {
+     opacity: 1;
+     transform: rotate(0deg);
+    top: 45px;
+    
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+      top: -900px;
+    }
+  }
+
+ 
+
+
+
+  .ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+    height:80px;
+  }
+  
+  .ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+
+
+  .banner{
+   width: 100%;
+    height: 100vh;
+  background: transparent;
+    display: flex;
+  justify-content: center;
+  }
+  .banner-text{
+   padding-right: 250px;
+    margin-top: 300px;
+  }
+  
+  .titre-victor{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    color: #707070;
+  }
+
+  .passione{
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    color: #707070;
+  }
+.reseaux{
+  width: 30px;
+  height: 100%;
+  position: fixed;
+z-index: 100;
+padding-left: 20px;
+display: flex;
+flex-direction: column;
+align-content: center;
+
+}
+  .img-reseaux{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .img-reseaux:hover{
+    transition-duration: 0.5s;
+    transform: scale(1.3);
+    transform-origin: center;
+  }
+
+  .trait-gris{
+    border-radius: 20px;
+    display: block;
+    height: 20px;
+    background-color: #707070;
+  width: 1.5px;
+  margin: auto;
+  }
+  .trait-gris-haut{
+    margin-bottom: 20px;
+  }
+  .trait-gris-bas{
+    margin-top: 20px;
+  }
+  
+.informations-moi{
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+  .infos-text{
+padding-top: 60px;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+  }
+ 
+
+  .informations-moi-text{
+    width: 40%;
+  }
+
+  .bonjour{
+    font-family: 'Montserrat', sans-serif;
+  
+    font-size: 60px;
+    color: #707070;
+
+  }
+
+  .cadre-photo{
+    width: 320px;
+    height: 460px;
+    box-shadow: 0px 0px 15px -3px #000000;
+  }
+
+  .image-moi{
+    margin: 50px auto 50px auto;
+    display: flex;
+    align-content: center;
+    width: 85%;
+    height: 80%;
+    transform: rotate(3deg);
+  }
+
+  .scotch{
+
+    width: 115px;
+
+  }
+.scotch-haut{
+  
+z-index: 100;
+  transform: rotate(-55deg);
+  position: absolute;
+  margin-left: 50px;
+  top: 15px;
+}
+
+.scotch-bas{
+  
+
+  transform: rotate(-30deg);
+  position: absolute;
+  margin-left: 150px;
+  top: 385px;
+}
+.header{
+  height: 100px;
+  position: fixed;
+  z-index: 150;
+  width: 100%;
+  align-content: center;
+  background-color: white;
+  border-bottom: 1px solid #46c26f;
+}
+.is-normal-header{
+  height: 70px;
+  padding-top: 30px;
+  transition: 1s;
+  font-size: 20px;
+}
+
+.is-small-header{
+  padding-top: 15px;
+  height: 55px;
+  transition: 1s;
+  font-size: 16px;
+}
+
+.menu-nav{
+  
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+.menu-nav ul{
+  list-style: none;
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+
+.onglet-nav{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+ 
+ 
+}
+.onglet-nav:hover{
+  cursor: pointer;
+}
+
+.souligne{
+  
+position: relative;
+top: 6px;
+  height: 3px;
+  width: 87%;
+  margin: auto;
+  background-color: #46c26f ;
+  
+  background: linear-gradient(to right, #46c26f 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .35s ease-out;
+  
+}
+
+.onglet-nav:hover .souligne{
+  
+      background-position: left bottom;
+  
+}
+
+.passions{
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-tableaux{
+  background-image: url('images/tableau.png');
+  height: 390Px;
+  width: 500px;
+  background-size: cover;
+}
+.photo-slide{
+ position: relative;
+ top: 130px;
+ text-align: center;
+  transform: rotate(4deg);
+  z-index: 100;
+  width: 55%;
+  height: 45%;
+  margin: auto;
+  background-color: white;
+}
+.img-slide{
+  width: 85%;
+  margin: 15px auto 0px auto;
+  height: 85%;
+  text-align: center;
+
+}
+.text-passions{
+  width: 50%;
+padding-top: 50px;
+}
+
+.text-passions p{
+
+padding-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+}
+
+.text-passions h3{
+ 
+color: #707070;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+}
+.container-titre-passions{
+  width: 400px;
+}
+
+.souligne-titre{
+  position: relative;
+  z-index: -100;
+  bottom: 20px;
+  width: 330px;
+  margin-left: 30px;
+  height: 15px;
+  background-color: #46c26f;
+}
+a{
+    color: black;
+}
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">   
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Victor Ledda</title>
+</head>
+
+<body>
+    <section class='reseaux'>
+<div class='trait-gris trait-gris-haut'></div>
+<img class='img-reseaux' src='images/github-gris.png'/>
+<img class='img-reseaux' src='images/linkdeen-png.png'/>
+<div class='trait-gris trait-gris-bas'></div>
+
+
+    </section>
+    <section class='section__carres'>
+        <div class="carre1"></div>
+        <div class="carre2"></div>
+        <div class="carre3"></div>
+        <div class="carre4"></div>
+        <div class="carre5"></div>
+        <div class="carre6"></div>
+        <div class="carre7"></div>
+        <div class="carre8"></div>
+        <div class="carre9"></div>
+        <div class="carre10"></div>
+        <div class="carre11"></div>
+        <div class="carre12"></div>
+        <div class="carre13"></div>
+        <div class="carre14"></div>
+        <div class="carre15"></div>
+        <div class="carre16"></div>
+        <div class="carre17"></div>
+        <div class="carre18"></div>
+        <div class="carre19"></div>
+        <div class="carre20"></div>
+       
+        </section> 
+        <header class='header is-normal-header'>
+            <nav class='menu-nav'>
+                <ul >
+                  <a href="{{ path('home')}}"> <li class='onglet-nav'><span >Qui suis je ?</span><div class="souligne"></div></li></a>
+                    <a href="{{ path('projets_index')}}"> <li class='onglet-nav'><span >Travaux</span><div class="souligne"></div></li></a>
+                     <a href="{{ path('contacts_new')}}"><li class='onglet-nav'><span >Contact</span><div class="souligne"></div></li></a>
+
+                </ul>
+            </nav>
+        </header>
+    <section class='banner'>
+        <div class="banner-text">
+        <h1 class="ml6 titre-victor">
+            <span class="text-wrapper">
+              <span class="letters">Victor Ledda</span>
+             
+         
+            </span>
+          </h1>
+          <h3 class='passione'>Passionné de
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Sport", "Web", "Nature" ]'>
+                <span class="wrap"></span>
+              </a>
+
+          </h3>
+          <h1>
+           
+          </h1>
+</div>
+    </section>
+    <div class='background-transparent'>
+            <section class='informations-moi container scroll-part is-invert'>
+        <div class='informations-moi-text content__to-right'>
+            <h2 class='bonjour'>Bonjour,</h2>
+            <p class='infos-text'>
+    Lorem Ipsum is simply dummy text of the
+    printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard 
+    dummy text ever since the 1500s when 
+    
+    And scrambled it to make a type specimen,
+    remaining essentially unchanged. It was 
+    popularised in the 1960s with the release.
+    Lorem Ipsum is simply dummy text of the
+    printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard 
+    dummy text ever since the 1500s when 
+    
+    And scrambled it to make a type specimen,
+    remaining essentially unchanged. It was 
+    popularised in the 1960s with the release.
+            </p>
+</div>
+<div class='cadre-photo content__to-left'>
+    <img class='scotch scotch-haut' src='images/schotch.png'/>
+<img class='image-moi' src='images/photo.jpg'/>
+<img class='scotch scotch-bas' src='images/schotch.png'/>
+</div>
+    </section>
+    <section class='passions scroll-part is-invert container'>
+
+<div class='content__to-right'>
+    <div class='img-tableaux'>
+        
+   
+    <div class='photo-slide'>
+<img class='img-slide' src="images/sport.jpg"/>
+
+    </div>
+    
+</div>
+</div>
+<div class='text-passions content__to-left'>
+    <div class='container-titre-passions'>
+    <h3>Mes passions</h3>
+    <div class='souligne-titre'></div>
+    </div>
+<p>
+    Lorem Ipsum is simply dummy text of the
+    printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard 
+    dummy text ever since the 1500s when 
+    
+    And scrambled it to make a type specimen,
+    remaining essentially unchanged. It was 
+    popularised in the 1960s with the release.
+    Lorem Ipsum is simply dummy text of the
+    printing and typesetting industry. Lorem 
+    Ipsum has been the industry's standard 
+    dummy text ever since the 1500s when 
+    
+    And scrambled it to make a type specimen,
+    remaining essentially unchanged. It was 
+    popularised in the 1960s with the release.
+</p>
+</div>
+    </section>
+</div>
+</body>
+</html>
+
+
+
+
+{% endblock %}
+ {% block javascripts %}
+            <script>
+            // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+let test = 0
+if(test == 0){
+    console.log(test)
+anime.timeline({loop: true})
+  .add({
+  
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: Infinity
+  });
+
+  console.log(test)
+test++
+}
+
+
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    
+};
+
+
+
+
+console.log('cc');
+   
+    class Menu {
+        
+        constructor() {
+          this.init();
+        
+        }
+        init(){
+            this.initObserver()
+            this.menuOnScroll()
+            }
+ 
+            menuOnScroll(){
+                
+                let header = document.querySelector('.header')
+                
+            window.addEventListener("scroll", () => {
+                
+              if (window.pageYOffset > 150) {
+                header.classList.remove("is-normal-header"); 
+               
+                header.classList.add("is-small-header");
+    
+              } 
+              if (window.pageYOffset < 150) {
+              
+                header.classList.remove("is-small-header");
+                header.classList.add("is-normal-header");
+               
+              
+              }
+            });
+        }
+    
+
+    initObserver() {
+        
+        const intersectionObserver = new window.IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              //entry.target est l'element html en lui meme
+              if (entry.intersectionRatio > 0.2) {
+                console.log("oui")
+                entry.target.classList.add("is-inviewport");
+                
+              } else {
+                //dehors
+                entry.target.classList.remove("is-inviewport");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        //observation des objets
+        document.querySelectorAll(".scroll-part").forEach(element => {
+          intersectionObserver.observe(element);
+        });
+      }
+
+      setActiveMenuElement(id) {
+        this.links.forEach((link) => {
+          link.classList.remove("is-active");
+          if (link.getAttribute("href") == "#" + id) {
+            link.classList.add("is-active");
+          }
+        });
+      }
+
+      
+    
+    }
+
+    const menu = new Menu();
+
+
+            </script>
+        {% endblock %}
+

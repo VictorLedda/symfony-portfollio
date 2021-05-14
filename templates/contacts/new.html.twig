@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Contacts{% endblock %}
+{% block stylesheets %}
+<style>
+
+.test{
+    width: 100%;
+    height:100px;
+    }
+a{
+  text-decoration: none;
+  color: #46c26f;
+}
+.header{
+  height: 100px;
+  position: fixed;
+  z-index: 150;
+  width: 100%;
+  align-content: center;
+  background-color: white;
+  border-bottom: 1px solid #46c26f;
+}
+.is-normal-header{
+  height: 70px;
+  padding-top: 30px;
+  transition: 1s;
+  font-size: 20px;
+}
+
+.is-small-header{
+  padding-top: 15px;
+  height: 55px;
+  transition: 1s;
+  font-size: 16px;
+}
+
+.menu-nav{
+  
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+.menu-nav ul{
+  list-style: none;
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+
+.onglet-nav{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+ 
+ 
+}
+.onglet-nav:hover{
+  cursor: pointer;
+}
+
+.souligne{
+  
+position: relative;
+top: 6px;
+  height: 3px;
+  width: 87%;
+  margin: auto;
+  background-color: #46c26f ;
+  
+  background: linear-gradient(to right, #46c26f 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .35s ease-out;
+  
+}
+
+.onglet-nav:hover .souligne{
+  
+      background-position: left bottom;
+  
+}
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+      <header class='header is-normal-header'>
+            <nav class='menu-nav'>
+                <ul >
+                  <a href="{{ path('home')}}"> <li class='onglet-nav'><span >Qui suis je ?</span><div class="souligne"></div></li></a>
+                    <a href="{{ path('travaux')}}"> <li class='onglet-nav'><span >Travaux</span><div class="souligne"></div></li></a>
+                     <a href="{{ path('contacts_new')}}"><li class='onglet-nav'><span >Contact</span><div class="souligne"></div></li></a>
+
+                </ul>
+            </nav>
+        </header>
+
+    {{ include('contacts/_form.html.twig') }}
+
+    
+{% endblock %}

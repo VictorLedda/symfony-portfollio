@@ -1,0 +1,206 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets index{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+.container{
+    margin: auto;
+    width: 80%
+}
+a{
+  text-decoration: none;
+  color: #46c26f;
+}
+.header{
+  height: 100px;
+
+  z-index: 150;
+  width: 100%;
+  align-content: center;
+  background-color: white;
+  border-bottom: 1px solid #46c26f;
+}
+.is-normal-header{
+  height: 70px;
+  padding-top: 30px;
+  transition: 1s;
+  font-size: 20px;
+}
+
+.is-small-header{
+  padding-top: 15px;
+  height: 55px;
+  transition: 1s;
+  font-size: 16px;
+}
+
+.menu-nav{
+  
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+.menu-nav ul{
+  list-style: none;
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
+
+
+.onglet-nav{
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+ 
+ 
+}
+.onglet-nav:hover{
+  cursor: pointer;
+}
+
+.souligne{
+  
+position: relative;
+top: 6px;
+  height: 3px;
+  width: 87%;
+  margin: auto;
+  background-color: #46c26f ;
+  
+  background: linear-gradient(to right, #46c26f 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .35s ease-out;
+  
+}
+
+.onglet-nav:hover .souligne{
+  
+      background-position: left bottom;
+  
+}
+
+.img-projet{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    }
+
+.titre-hover{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 22px;
+    color: #707070;
+}
+
+.projet{
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 400px;
+    height: 400px;
+    margin-top: 35px;
+}
+
+.competences-hover{
+    font-family: 'Poppins', sans-serif;
+  text-align: justify;
+  text-align: center;
+  color: #707070;
+}
+
+.titre-projets{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+     font-family: 'Montserrat', sans-serif;
+}
+
+.onglet-trier{
+    border-radius:40px;
+    padding: 10px 25px 10px 25px;
+     background-color:#F8F8F8;
+     color: #707070;
+     font-family: 'Montserrat', sans-serif;
+}
+.nav-trier{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.infos-hover{
+    
+   
+    height: 90%;
+    width: 90%;
+    margin: 50px auto 50px auto;
+    opacity: 0.9;
+    background-color:white;
+}
+.projets{
+    padding-top: 50px;
+    flex-wrap: wrap;
+    display: flex;
+    
+    justify-content: space-around;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+   <header class='header is-normal-header'>
+            <nav class='menu-nav'>
+                <ul >
+                  <a href="{{ path('home')}}"> <li class='onglet-nav'><span >Qui suis je ?</span><div class="souligne"></div></li></a>
+                    <a href="{{ path('projets_index')}}"> <li class='onglet-nav'><span >Travaux</span><div class="souligne"></div></li></a>
+                     <a href="{{ path('contacts_new')}}"><li class='onglet-nav'><span >Contact</span><div class="souligne"></div></li></a>
+
+                </ul>
+            </nav>
+        </header>
+<h1 class='titre-projets'>Mes projets</h1>
+<section class='nav-trier'>
+<div class='onglet-trier'>Tous</div>
+<div class='onglet-trier'>Web</div>
+<div class='onglet-trier'>Graphisme</div>
+
+
+</section>
+   <section class='container projets'>
+        {% for projet in projets %}
+
+              <a href="{{ path('projets_show', {'id': projet.id}) }}">
+<div class='projet'>          
+<img class='img-projet' src='../images/mockup-images/{{ projet.image }}'/>
+
+<div class='infos-hover'>
+
+<h3 class='titre-hover'>{{ projet.nom }}</h3>
+<h5 class='competences-hover'>{{ projet.competences }}</h5>
+                
+             
+
+
+</div>
+
+
+
+</div>
+         </a>      
+               
+                
+             
+        {% else %}
+            
+        {% endfor %}
+ 
+</section>
+    
+{% endblock %}
